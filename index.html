@@ -9,14 +9,7 @@
         :root { --accent-blue: #95CBFF; --text-dark: #1A1A1A; --bg-gray: #F9F9F9; }
         body { font-family: 'Source Sans Pro', sans-serif; margin: 0; background-color: var(--bg-gray); color: var(--text-dark); line-height: 1.5; }
         
-        /* Navigation */
-        nav { display: flex; justify-content: flex-end; padding: 20px; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .menu-icon { width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transition: 0.3s; }
-        .menu-icon span { height: 3px; background: var(--text-dark); border-radius: 2px; }
-        .nav-links { display: none; padding-right: 20px; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; margin-left: 15px; }
-
-        /* Banner Header */
+        /* Clean Header Banner */
         header { text-align: center; padding: 50px 20px; background-color: #EDEDED; }
         .name-banner { display: inline-block; }
         h1 { font-size: 2.2rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; font-weight: 700; }
@@ -26,16 +19,18 @@
         /* Main Profile Card */
         main { max-width: 550px; margin: 0 auto; padding: 30px 15px; }
         .profile-container { background: white; border-radius: 30px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: left; }
-        .profile-header { text-align: center; margin-bottom: 25px; }
-        .profile-pic { width: 120px; height: 120px; background: #EEE; border-radius: 50%; margin: 0 auto 15px; }
         
-        /* Resume Content Styling */
+        .profile-header { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #EEE; padding-bottom: 20px; }
+        .profile-pic { 
+            width: 140px; height: 140px; object-fit: cover; border-radius: 50%; 
+            margin: 0 auto 15px; display: block; border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+        
+        /* Content Styling */
         h2 { border-bottom: 2px solid var(--accent-blue); display: inline-block; font-size: 1.3rem; margin-top: 25px; margin-bottom: 10px; }
         h3 { font-size: 1.1rem; margin: 15px 0 5px 0; color: #333; }
         .text-box { font-size: 0.95rem; color: #444; }
         .project-item { margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #EEE; }
-        ul { padding-left: 20px; margin: 5px 0; }
-        li { margin-bottom: 5px; }
 
         /* Skills Tags */
         .skills-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
@@ -49,15 +44,6 @@
 </head>
 <body>
 
-    <nav>
-        <div id="navLinks" class="nav-links">
-            <a href="gallery.html">Gallery</a>
-        </div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
     <header>
         <div class="name-banner">
             <h1>MATTHEW JENKINS</h1>
@@ -68,106 +54,73 @@
 
     <main>
         <div class="profile-container">
-    <div class="profile-header">
-        <img src="MJ_pic.jpg" alt="Matthew Jenkins" class="profile-pic">
-        
-        <h2 style="border:none; margin:10px 0 0 0; font-size: 1.6rem; letter-spacing: 1px;">MATTHEW JENKINS</h2>
-        
-        <p style="color: var(--accent-blue); font-weight: 600; margin: 5px 0; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
-            UNR Graduate | Class of Dec 2025
-        </p>
-        
-        <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">
-            775-624-4851 | matthew.jenkins.1414@gmail.com
-        </p>
-    </div>
+            <div class="profile-header">
+                <img src="MJ_pic.jpg" alt="Matthew Jenkins" class="profile-pic">
+                <h2 style="border:none; margin:10px 0 0 0; font-size: 1.6rem; letter-spacing: 1px;">MATTHEW JENKINS</h2>
+                <p style="color: var(--accent-blue); font-weight: 600; margin: 5px 0; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                    UNR Graduate | Class of Dec 2025
+                </p>
+                <p style="font-size: 0.9rem; color: #666;">
+                    775-624-4851 | matthew.jenkins.1414@gmail.com
+                </p>
+            </div>
 
             <div class="text-box">
                 <h2>Professional Overview</h2>
-                <p>Recent Computer Science and Engineering graduate dedicated to addressing challenging problems in AI, Robotics, Aerospace, and Game Development. Motivated to contribute to impactful systems while scaling technical expertise to meet industry demands.</p>
+                <p>Recent Computer Science and Engineering graduate dedicated to addressing challenging problems in AI, Robotics, Aerospace, and Game Development[cite: 24, 25]. Motivated to contribute to impactful systems while scaling technical expertise to meet industry demands[cite: 26].</p>
 
                 <h2>Technical Experience</h2>
                 
                 <div class="project-item">
                     <h3>Autonomous Robotic Navigation System</h3>
-                    <p>Developed main navigation and obstacle detection using LiDAR and camera. Implemented a clustering algorithm and distance-based filter to resolve "Wall Blurring" sensor issues.</p>
+                    <p>Developed main navigation and obstacle detection using LiDAR and camera[cite: 31]. Implemented a clustering algorithm and distance-based filter to resolve "Wall Blurring" sensor issues[cite: 32, 33].</p>
                 </div>
 
                 <div class="project-item">
                     <h3>GOAP AI System (Project Verdict)</h3>
-                    <p>Created a behavior system using regression-based planning. Optimized the search algorithm with cost-based prioritization to maintain performance during complex world states.</p>
+                    <p>Created a behavior system using regression-based planning for emergent AI[cite: 34, 36]. Optimized search algorithms with cost-based prioritization to maintain performance[cite: 38, 39].</p>
                 </div>
 
                 <div class="project-item">
                     <h3>AI Image Detection System</h3>
-                    <p>Engineered a multi-model system using machine learning to distinguish between civilian and government aircraft based on flight log data.</p>
+                    <p>Engineered a multi-model system using machine learning to distinguish between civilian and government aircraft based on flight log data[cite: 40, 41].</p>
                 </div>
 
                 <div class="project-item">
                     <h3>AR Drone Swarm SDK Rewrite</h3>
-                    <p>Collaborated on autonomous swarm implementation. Performed a comprehensive SDK rewrite of legacy code to enable behavior synchronization across multiple drones.</p>
+                    <p>Collaborated on autonomous swarm implementation and performed a comprehensive SDK rewrite to enable behavior synchronization[cite: 48, 50].</p>
                 </div>
 
                 <h2>Technical Skills</h2>
                 
                 <h3>Programming Languages</h3>
                 <div class="skills-container">
-                    <span class="skill-tag">Proficient: C++</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">Experienced: Rust</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">.NET</span>
-                    <span class="skill-tag">Familiar: SQL</span>
-                    <span class="skill-tag">XML/HTML</span>
-                    <span class="skill-tag">Batch</span>
+                    <span class="skill-tag">Proficient: C++</span><span class="skill-tag">Python</span>
+                    <span class="skill-tag">C#</span><span class="skill-tag">C</span>
+                    <span class="skill-tag">Experienced: Rust</span><span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">.NET</span><span class="skill-tag">Familiar: SQL</span>
                 </div>
 
                 <h3>Engineering & Systems</h3>
                 <div class="skills-container">
-                    <span class="skill-tag">AI Training & Testing</span>
-                    <span class="skill-tag">Autonomous Navigation</span>
-                    <span class="skill-tag">GOAP & State Machines</span>
-                    <span class="skill-tag">Embedded System Design</span>
-                    <span class="skill-tag">Hands-on Hardware Troubleshooting</span>
+                    <span class="skill-tag">AI Training & Testing</span><span class="skill-tag">Autonomous Navigation</span>
+                    <span class="skill-tag">GOAP & State Machines</span><span class="skill-tag">Embedded System Design</span>
+                    <span class="skill-tag">Hardware Troubleshooting</span>
                 </div>
 
                 <h3>Applications & Tools</h3>
                 <div class="skills-container">
-                    <span class="skill-tag">SolidWorks CAD</span>
-                    <span class="skill-tag">Visual Studio</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Unity</span>
-                    <span class="skill-tag">Unreal Engine 4/5</span>
-                    <span class="skill-tag">Blender/Maya</span>
-                </div>
-
-                <h3>Creative & Professional</h3>
-                <div class="skills-container">
-                    <span class="skill-tag">UI/UX Design</span>
-                    <span class="skill-tag">3D Modeling</span>
-                    <span class="skill-tag">Sound Design</span>
-                    <span class="skill-tag">Video Production</span>
-                    <span class="skill-tag">Agile Workflow</span>
-                    <span class="skill-tag">Critical Thinking</span>
+                    <span class="skill-tag">SolidWorks CAD</span><span class="skill-tag">Visual Studio</span>
+                    <span class="skill-tag">Git</span><span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Unity</span><span class="skill-tag">Unreal Engine 4/5</span>
                 </div>
             </div>
 
             <div class="btn-container">
-                <a href="mailto:matthew.jenkins.1414@gmail.com" class="btn" style="background: #FF8A50; box-shadow: 0 4px 10px rgba(255, 138, 80, 0.4);">Email Me</a>
+                <a href="mailto:matthew.jenkins.1414@gmail.com" class="btn" style="background: #FF8A50;">Email Me</a>
                 <a href="tel:7756244851" class="btn">Call Me</a>
             </div>
         </div>
     </main>
-
-    <script>
-        function toggleMenu() {
-            var x = document.getElementById("navLinks");
-            if (x.style.display === "block") { x.style.display = "none"; } 
-            else { x.style.display = "block"; }
-        }
-    </script>
 </body>
 </html>
