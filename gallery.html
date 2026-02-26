@@ -2,24 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery | Matthew Jenkins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery | Matthew Jenkins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .item { background: #eee; padding: 10px; text-align: center; border-radius: 5px; }
+        :root { --accent-blue: #95CBFF; --text-dark: #1A1A1A; }
+        body { font-family: 'Source Sans Pro', sans-serif; margin: 0; background-color: #F9F9F9; color: var(--text-dark); }
+        
+        /* Consistent Header from Home */
+        header { text-align: center; padding: 40px 20px; background-color: #EDEDED; }
+        h1 { font-size: 2.2rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
+        .blue-line { height: 6px; background-color: var(--accent-blue); width: 120px; margin: 10px auto; }
+
+        /* Gallery Grid */
+        .gallery-container { max-width: 900px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .gallery-img { width: 100%; height: 200px; object-fit: cover; background: #EEE; }
+        .gallery-info { padding: 20px; }
+        .gallery-info h3 { margin: 0 0 10px 0; color: var(--text-dark); border-left: 4px solid var(--accent-blue); padding-left: 10px; }
+        .gallery-info p { font-size: 0.9rem; color: #555; line-height: 1.4; }
+        
+        /* Navigation */
+        .back-nav { padding: 20px; text-align: left; }
+        .back-nav a { text-decoration: none; color: var(--text-dark); font-weight: 600; }
     </style>
 </head>
 <body>
-    <nav><a href="index.html">Back to Home</a></nav>
-    <h1>Creative Gallery</h1>
-    <div class="grid">
-        <div class="item">
-            <p><strong>Vertigo Protocol</strong></p>
-            <p>Retro-style FPS Capstone [cite: 133, 135]</p>
+
+    <nav class="back-nav">
+        <a href="home.html">← Back to Home</a>
+    </nav>
+
+    <header>
+        <h1>PROJECT GALLERY</h1>
+        <div class="blue-line"></div>
+    </header>
+
+    <div class="gallery-container">
+        
+        <div class="gallery-item">
+            <div class="gallery-img"></div> <div class="gallery-info">
+                <h3>Autonomous Robotics</h3>
+                <p>Visualizing LiDAR point cloud data and the clustering algorithm used to identify doorways and filter "Wall Blurring" noise [cite: 31-33].</p>
+            </div>
         </div>
-        <div class="item">
-            <p><strong>3D Models & Design</strong></p>
-            <p>Showcasing 3D Modeling and UI/UX </p>
+
+        <div class="gallery-item">
+            <div class="gallery-img"></div> <div class="gallery-info">
+                <h3>GOAP AI Behavior</h3>
+                <p>Architectural breakdown of the regression-based planning system used for emergent AI behavior in "Project Verdict" [cite: 34-36].</p>
+            </div>
         </div>
+
+        <div class="gallery-item">
+            <div class="gallery-img"></div> <div class="gallery-info">
+                <h3>Mechanical Restoration</h3>
+                <p>Hands-on restoration of legacy electronics, including Walkman cassette players. Involved circuit troubleshooting and mechanical belt replacement[cite: 10].</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <div class="gallery-img"></div> <div class="gallery-info">
+                <h3>Hardware Troubleshooting</h3>
+                <p>Analyzing and repairing small motor engines and circuits, showcasing a deep understanding of physical system failure points[cite: 10].</p>
+            </div>
+        </div>
+
     </div>
+
 </body>
 </html>
