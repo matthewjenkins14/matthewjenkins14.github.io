@@ -6,49 +6,55 @@
     <title>Matthew Jenkins | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent-blue: #95CBFF; --text-dark: #1A1A1A; }
-        body { font-family: 'Source Sans Pro', sans-serif; margin: 0; background-color: #F9F9F9; color: var(--text-dark); }
+        :root { --accent-blue: #95CBFF; --text-dark: #1A1A1A; --bg-gray: #F9F9F9; }
+        body { font-family: 'Source Sans Pro', sans-serif; margin: 0; background-color: var(--bg-gray); color: var(--text-dark); line-height: 1.5; }
         
-        /* Navigation Menu */
-        nav { display: flex; justify-content: flex-end; padding: 20px; background: white; }
-        .menu-icon { width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+        /* Navigation */
+        nav { display: flex; justify-content: flex-end; padding: 20px; background: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .menu-icon { width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transition: 0.3s; }
         .menu-icon span { height: 3px; background: var(--text-dark); border-radius: 2px; }
-        .nav-links { display: none; } /* Set to display: block via JS for hide feature */
+        .nav-links { display: none; padding-right: 20px; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; margin-left: 15px; }
 
-        /* Header Banner (Inspired by Image 1) */
-        header { text-align: center; padding: 60px 20px; background-color: #EDEDED; }
-        .name-banner { display: inline-block; position: relative; }
-        h1 { font-size: 2.5rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; }
-        .blue-line { height: 6px; background-color: var(--accent-blue); width: 100%; margin: 10px 0; }
-        .sub-title { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
+        /* Banner Header */
+        header { text-align: center; padding: 50px 20px; background-color: #EDEDED; }
+        .name-banner { display: inline-block; }
+        h1 { font-size: 2.2rem; letter-spacing: 5px; text-transform: uppercase; margin: 0; font-weight: 700; }
+        .blue-line { height: 6px; background-color: var(--accent-blue); width: 100%; margin: 8px 0; }
+        .sub-title { font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; color: #555; }
 
-        /* Content Section (Inspired by Image 2) */
-        main { max-width: 500px; margin: 0 auto; padding: 40px 20px; }
-        .profile-container { 
-            background: white; border-radius: 30px; padding: 40px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;
-        }
-        .text-box { 
-            min-height: 200px; border: 2px dashed #DDD; border-radius: 15px; 
-            margin-top: 20px; padding: 20px; color: #888;
-        }
+        /* Main Profile Card */
+        main { max-width: 550px; margin: 0 auto; padding: 30px 15px; }
+        .profile-container { background: white; border-radius: 30px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: left; }
+        .profile-header { text-align: center; margin-bottom: 25px; }
+        .profile-pic { width: 120px; height: 120px; background: #EEE; border-radius: 50%; margin: 0 auto 15px; }
         
-        /* Buttons */
-        .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
-        .btn { 
-            background-color: var(--accent-blue); color: white; padding: 12px 30px; 
-            border-radius: 25px; text-decoration: none; font-weight: 600;
-        }
+        /* Resume Content Styling */
+        h2 { border-bottom: 2px solid var(--accent-blue); display: inline-block; font-size: 1.3rem; margin-top: 25px; margin-bottom: 10px; }
+        h3 { font-size: 1.1rem; margin: 15px 0 5px 0; color: #333; }
+        .text-box { font-size: 0.95rem; color: #444; }
+        .project-item { margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #EEE; }
+        ul { padding-left: 20px; margin: 5px 0; }
+        li { margin-bottom: 5px; }
+
+        /* Skills Tags */
+        .skills-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .skill-tag { background: #F0F7FF; color: #0056b3; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 600; border: 1px solid #D0E5FF; }
+
+        /* Action Buttons */
+        .btn-container { display: flex; gap: 15px; justify-content: center; margin-top: 35px; }
+        .btn { background-color: var(--accent-blue); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 10px rgba(149, 203, 255, 0.4); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
     <nav>
+        <div id="navLinks" class="nav-links">
+            <a href="gallery.html">Gallery</a>
+        </div>
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span><span></span><span></span>
-        </div>
-        <div id="navLinks" class="nav-links">
-            <a href="gallery.html">Gallery</a> | <a href="resume.html">Resume</a>
         </div>
     </nav>
 
@@ -62,17 +68,51 @@
 
     <main>
         <div class="profile-container">
-            <div style="width: 150px; height: 150px; background: #EEE; border-radius: 50%; margin: 0 auto 20px;"></div>
-            
-            <h2 style="margin-bottom: 5px;">Matthew Jenkins</h2>
-            <p style="color: #666; margin-top: 0;">UNR Graduate | Dec 2025</p>
+            <div class="profile-header">
+                <div class="profile-pic"></div>
+                <h2 style="border:none; margin:0;">Matthew Jenkins</h2>
+                <p style="color: #888; margin: 5px 0;">UNR Graduate | Dec 2025</p>
+                <p style="font-size: 0.9rem;">775-624-4851 | matthew.jenkins.1414@gmail.com</p>
+            </div>
 
             <div class="text-box">
-                Content to be added...
+                <h2>Professional Overview</h2>
+                <p>Recent Computer Science and Engineering graduate dedicated to addressing challenging problems in AI, Robotics, Aerospace, and Game Development. Motivated to contribute to impactful systems while scaling technical expertise to meet industry demands.</p>
+
+                <h2>Technical Experience</h2>
+                
+                <div class="project-item">
+                    <h3>Autonomous Robotic Navigation System</h3>
+                    <p>Developed main navigation and obstacle detection using LiDAR and camera. Implemented a clustering algorithm and distance-based filter to resolve "Wall Blurring" sensor issues.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>GOAP AI System (Project Verdict)</h3>
+                    <p>Created a behavior system using regression-based planning. Optimized the search algorithm with cost-based prioritization to maintain performance during complex world states.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>AI Image Detection System</h3>
+                    <p>Engineered a multi-model system using machine learning to distinguish between civilian and government aircraft based on flight log data.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>AR Drone Swarm SDK Rewrite</h3>
+                    <p>Collaborated on autonomous swarm implementation. Performed a comprehensive SDK rewrite of legacy code to enable behavior synchronization across multiple drones.</p>
+                </div>
+
+                <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag">C++</span><span class="skill-tag">Python</span>
+                    <span class="skill-tag">C#</span><span class="skill-tag">C</span>
+                    <span class="skill-tag">Rust</span><span class="skill-tag">.NET</span>
+                    <span class="skill-tag">AI Training</span><span class="skill-tag">Autonomous Navigation</span>
+                    <span class="skill-tag">Embedded Systems</span><span class="skill-tag">Unity/Unreal</span>
+                </div>
             </div>
 
             <div class="btn-container">
-                <a href="#" class="btn" style="background: #FF8A50;">Resume</a>
+                <a href="mailto:matthew.jenkins.1414@gmail.com" class="btn" style="background: #FF8A50; box-shadow: 0 4px 10px rgba(255, 138, 80, 0.4);">Email Me</a>
                 <a href="tel:7756244851" class="btn">Call Me</a>
             </div>
         </div>
